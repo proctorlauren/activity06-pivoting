@@ -1,6 +1,6 @@
 ---
 title: "Activity 6"
-author: "Name"
+author: "Lauren Proctor"
 output: github_document
 ---
 
@@ -47,7 +47,7 @@ Now, why is `by_speaker` untidy data?
 How would this data be organized if it were tidy?
 Do not use any of your new `{tidyr}` skills yet, only describe it.
 
-**Response**: 
+**Response**: Each variable does not have its own column, meaning that if season is a variable then it doesn't have its own column. 
 
 
 ![](README-img/noun_pause.png) **Planned Pause Point**: If you have any questions, contact your instructor. Otherwise feel free to continue on.
@@ -83,6 +83,9 @@ Remember that you can view the help documentation by using the `?` method in you
 2. Assign your reformatted dataset to `friends_tidy`, and 
 3. Name your code chunk either `pivot_contains` or `pivot_ends` depending on which helper function you used.
 
+```{r pivot_season_longer}
+pivot_contains <- friends_tidy %>% 
+  select(num_range("season", 1:10))
 
 
 
