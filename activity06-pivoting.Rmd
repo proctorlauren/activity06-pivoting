@@ -84,8 +84,15 @@ Remember that you can view the help documentation by using the `?` method in you
 3. Name your code chunk either `pivot_contains` or `pivot_ends` depending on which helper function you used.
 
 ```{r pivot_season_longer}
-pivot_contains <- friends_tidy %>% 
-  select(num_range("season", 1:10))
+friends_tidy <- by_speaker %>% 
+  pivot_longer(
+    cols = starts_with("Season"),
+    names_to = "Season",
+    values_to = "Words"
+  )
+
+friends_tidy
+```
 
 
 
@@ -99,6 +106,9 @@ We can do this by writing it to a file within our directory.
 3. Name your code chunk `writing_file`
 
 
+```{r pivot_season_longer}
+write_csv(friends_tidy, here::here("data", "friends_tidy.csv"))
+```
 
 
 Inspect that this file was created by looking in the `data` project folder in the **Files** pane.
