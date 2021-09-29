@@ -6,7 +6,6 @@ output: github_document
 
 ## Data and packages
 
-
 Again, we will load all of the `{tidyverse}` for this activity.
 
 ```{r load_packages, message = FALSE}
